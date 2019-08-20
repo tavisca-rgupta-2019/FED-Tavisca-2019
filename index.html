@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+    body{
+       
+        padding:0px;
+        border: 0px;
+        margin: 0px;
+    }
+    header {
+        width:100%;
+        text-align: center;
+        top:0;
+        background:#333;
+        color: #fff;
+        margin-top: 0px;
+        font-size:40px;
+        height: 50px;
+    }   
+    div .container{
+        margin-top:0px;
+        display:flex;
+        flex-flow: row;
+        display: inline-block;
+        
+    }
+    .main{
+        width: 75%;
+        float: left;
+
+    }
+   .content{
+        display: none;
+        padding: 20px;
+        background: #fff;
+        font-size: 20px;
+    }
+    #menu{
+        width: 20%;
+        background: #000;
+        height: 70%;
+    
+        
+        float: left;
+        line-height: 50px;
+
+    }
+    ol {color: brown;
+        line-height: 100px;
+
+    } 
+    table,th,td{
+        margin-top:4px;
+        border-collapse: collapse;
+        border : 1px solid black;
+        width: 60%;
+    }
+    th,td{
+        padding: 15px;
+      
+    }
+   
+    /* #search {
+        padding: 5px 20px;
+        position: relative;
+        
+    } */
+    #autocomplete-suggestions{
+        position:absolute;
+        border: 1px solid black;
+        width:18%;
+       
+       
+        background-color: white;
+        
+    }
+  
+    nav a{
+        color: #fff;
+        text-decoration: none;
+        padding: 30px 40px;
+        display: block;
+        font-size: 20px;
+        text-align: center;
+    }
+    #search-options{
+
+        padding: 1px 0px 0px 0px;
+        position: relative;
+    }
+    #searchButton,#addButton{
+        width:fit-content;
+    }
+    nav a:hover { 
+  background-color: burlywood;
+}
+
+.searchpopup li:hover {
+    background-color:rosybrown;
+}
+   
+    .searchpopup ul{
+        padding-inline-start: 0px;
+        margin: 0px;
+    }
+</style>
+
+</head>
+<body>
+        <script src="myScript.js"></script>
+    <header>My To-Do List</header>
+    <div class="container">
+        <div id="menu">
+         <nav>
+                <a href="JavaScript:void(0)" onclick="getContent(this)" id="to-do">To Do</a>
+                <a href="JavaScript:void(0)" onclick="getContent(this)" id="uses">Uses</a>
+                <a href="JavaScript:void(0)" onclick="getContent(this)" id="department">Department</a>
+                <a href="JavaScript:void(0)" onclick="getContent(this)" id="logout">Logout</a>
+                
+        </nav>
+        </div>
+        <div class="main">
+            <!-- <div class="searchbar">
+               
+               
+            </div> -->
+            <div class="content" id="selected-to-do" style="display: block" >
+                    <div id="search-options">
+                            <input type="text" placeholder="Add Task to search.." onfocus="showSuggestions()" id="searchbar-text" onblur="hideSuggestions()" value="">
+                            <button  type="search" id="searchButton">search</button>
+                            <button  type="button" id="addButton" onclick="addTask()">Add</button>
+                            <div class="searchpopup" id="autocomplete-suggestions" style="display:none">
+                                    <ul class="searchpopup" style="list-style-type:none;background: white;">
+                                        <li onclick="addTask()">Task3</li>
+                                        <li onclick="addTask()">Task4</li>
+                                        <li onclick="addTask()">Task5</li>
+                                    </ul>
+                            </div>
+                        </div>
+                <table id="task-list">
+                    <tr>
+                        <th>Tasks</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>Task1</td>
+                        <td>
+                            <button type="button" class="button">Edit</button>
+                            <button type="button" class="button">Remove</button>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Task2</td>
+                        <td>
+                            <button type="button" class="button">Edit</button>
+                            <button type="button" class="button">Remove</button>
+    
+                        </td>
+                    </tr>
+                </table>
+            
+            </div>
+            <div class="content" id="selected-uses">
+                <h2>Uses List is empty</h2>
+
+            </div>
+            <div class="content" id="selected-department">
+                <h2>Department List empty</h2>
+            </div>
+            <div class="content" id="selected-logout">
+                <h2>Logout Request Denied</h2>
+            </div>
+        </div>
+    
+    </div>
+
+    
+    
+</body>
