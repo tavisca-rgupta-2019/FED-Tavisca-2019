@@ -16,12 +16,26 @@ function getContent(obj) {
 
    }
    function addTask()
-   {  var tab=document.getElementsByTagName("table");
-      var value=document.getElementById("searchbar-text").value;
-      var newRow='<tr>'+'<td>'+value+'</td>'+'<td>'+'<button type="button" class="button">Edit</button>'
-      +'<button type="button" class="button">Remove</button>'+'</td>'+'</tr>'
+   {  
+      
+       var tab=document.getElementsByTagName("table")[0];
+      var val=document.getElementById("searchbar-text").value;
+      if(val.length==0)
+        {
+            alert("Enter the task to be added");
+            return;
+        }      
+      
+      var newRow='<tr>'+'<td>'+val+'</td>'+'<td>'+'<button type="button" class="button">Edit</button>'
+      +'<button type="button" class="button">Remove</button>'+'</td>'+'</tr>';
       tab.innerHTML+=newRow;
 
+
+   }
+   function setVal(ele)
+   {
+    var val=ele.innerHTML;
+    alert(val);
 
    }
    function hideSuggestions()

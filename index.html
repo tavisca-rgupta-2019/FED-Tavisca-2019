@@ -40,7 +40,7 @@
     #menu{
         width: 20%;
         background: #000;
-        height: 70%;
+        height: 80%;
     
         
         float: left;
@@ -62,11 +62,11 @@
       
     }
    
-    /* #search {
+    #search {
         padding: 5px 20px;
         position: relative;
         
-    } */
+    } 
     #autocomplete-suggestions{
         position:absolute;
         border: 1px solid black;
@@ -130,9 +130,9 @@
                             <button  type="button" id="addButton" onclick="addTask()">Add</button>
                             <div class="searchpopup" id="autocomplete-suggestions" style="display:none">
                                     <ul class="searchpopup" style="list-style-type:none;background: white;">
-                                        <li onclick="addTask()">Task3</li>
-                                        <li onclick="addTask()">Task4</li>
-                                        <li onclick="addTask()">Task5</li>
+                                        <li onmouseover="setVal(this)">Task3</li>
+                                        <li onmouseover="setVal(this)">Task4</li>
+                                        <li onmouseover="setVal(this)">Task5</li>
                                     </ul>
                             </div>
                         </div>
