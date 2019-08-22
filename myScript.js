@@ -11,10 +11,21 @@ function getContent(obj) {
     document.getElementById("selected-" + obj1).style.display = "block";
 }
 
-function showSuggestions() {
+function showSuggestions(obj) {
+    var searchString=obj.value;
+    for(let i=0;i<arr.length;i++)
+    {if((arr[i].title).includes(searchString))
+        populateSuggestionList(arr[i].title);
+    }
     document.getElementById("autocomplete-suggestions").style.display = "block";
 
 }
+ function populateSuggestionsList(str)
+ {   var val='<li onmouseover="setVal(this)">'+str+'</li>';
+    document.getElementById("autocomplete-suggestions-list").innerHTML+=val;
+ }
+
+
 function addTask(obj) {
 
     var tab = document.getElementById(obj);
@@ -63,17 +74,28 @@ function editVal(obj)
   var element=parent.previousSibling;
   element.innerHTML="";
   var inputbar='<input type="text" placeholder="Enter the task..." id="edit-task-bar" value="" onchange="alterTask(this)">'
+
   element.innerHTML=inputbar;
 }
 function alterTask(obj)
 { 
 var parent=obj.parentElement;
 var val=obj.value;
+for(let i=0;i<arr.length;i++)
+{if(arr[i].title==val)
+    {alert("Task already exists");
+     return;
+    }
+}
+
 var index=parent.previousSibling.innerHTML;
 arr.splice(index-1,1);
 arr.splice(index-1,0,{"title":val})
+document.getElementById("task-list").innerHTML="";
+renderElement();
 
-parent.innerHTML=obj.value;
+
+//parent.innerHTML=obj.value;
 
 
 }

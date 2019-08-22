@@ -21,25 +21,15 @@
            
             <div class="content" id="selected-to-do" style="display: none" >
                     <div id="search-options">
-                            <input type="text" placeholder="Add Task to search.." onfocus="showSuggestions()" id="searchbar-text" onblur="hideSuggestions()" value="">
+                            <input type="text" placeholder="Add Task to search.." onchange="showSuggestions(this)" id="searchbar-text" onblur="hideSuggestions()" value="">
                             <button  type="search" id="searchButton">search</button>
                             <button  type="button" id="addButton" onclick="addTask()">Add</button>
                             <div class="searchpopup" id="autocomplete-suggestions" style="display:none">
-                                    <ul class="searchpopup" style="list-style-type:none;background: white;">
-                                        <li onmouseover="setVal(this)">Task3</li>
-                                        <li onmouseover="setVal(this)">Task4</li>
-                                        <li onmouseover="setVal(this)">Task5</li>
+                                    <ul class="searchpopup" id="autocomplete-suggestions-list" style="list-style-type:none;background: white;">
                                     </ul>
                             </div>
                         </div>
-                <table id="task-list">
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Title</th>
-                        <th>Actions</th>
-                    </tr>
-                
-                </table>
+                <table id="task-list"></table>
             
             </div>
             <div class="content" id="selected-uses">
