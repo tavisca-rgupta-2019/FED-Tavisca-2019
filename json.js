@@ -50,7 +50,7 @@
             '<td>'+ sr +'</td>'+
             '<td>'+arr[i].title+'</td>'+
             '<td class="operations">'+
-                '<button type="button" id="edit-'+i+'"class="button">Edit</button>'+
+                '<button type="button" id="edit-'+i+'"onclick="editVal(this)" class="button">Edit</button>'+
                 '<button type="button" id="delete-'+i+'" onclick="deleteVal(this)" class="button">Remove</button>'+
             '</td>'+
           '</tr>';

@@ -1,4 +1,4 @@
-window.o
+
 
 function getContent(obj) {
     var obj1 = obj.getAttribute("id");
@@ -15,9 +15,9 @@ function showSuggestions() {
     document.getElementById("autocomplete-suggestions").style.display = "block";
 
 }
-function addTask() {
+function addTask(obj) {
 
-    var tab = document.getElementById("task-list");
+    var tab = document.getElementById(obj);
     var val = document.getElementById("searchbar-text").value;
     if (val.length == 0) {
         alert("Enter the task to be added");
@@ -27,9 +27,6 @@ function addTask() {
     {if(arr[i].title==val)
         return;
     }
-
-    
-   
     arr.push({
         "title": val,
     });
@@ -38,7 +35,7 @@ function addTask() {
 
 
 
-    var newRow = '<tr>' + '<td>' + id + '</td>' + '<td>' + val + '</td>' + '<td>' + '<button type="button" id="Edit-'+index+'"class="button">Edit</button>'
+    var newRow = '<tr>' + '<td>' + id + '</td>' + '<td>' + val + '</td>' + '<td>' + '<button type="button" id="Edit-'+index+'" onclick="editVal(this)" class="button">Edit</button>'
         + '<button type="button" id="delete-'+index+'"class="button" onclick="deleteVal(this)">Remove</button>' + '</td>' + '</tr>';
     tab.innerHTML += newRow;
 
@@ -60,4 +57,19 @@ function deleteVal(obj){
     renderElement();
     
     
+}
+function editVal(obj)
+{ var parent=document.getElementById(obj.id).parentElement;
+  var element=document.getElementById(obj.id).parentElement.previousSibling;
+  element.innerHTML="";
+  var inputbar='<input type="text" placeholder="Enter the task..." id="edit-task-bar" value="" onchange="alterTask(this)">'
+  element.innerHTML+=inputbar;
+}
+function alterTask(obj)
+{ 
+var parent=document.getElementById(obj.id).parentElement;
+//parent.innerHTML="";
+parent.innerHTML=document.getElementById(obj.id).value;
+
+
 }
