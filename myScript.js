@@ -59,17 +59,21 @@ function deleteVal(obj){
     
 }
 function editVal(obj)
-{ var parent=document.getElementById(obj.id).parentElement;
-  var element=document.getElementById(obj.id).parentElement.previousSibling;
+{ var parent=obj.parentElement;
+  var element=parent.previousSibling;
   element.innerHTML="";
   var inputbar='<input type="text" placeholder="Enter the task..." id="edit-task-bar" value="" onchange="alterTask(this)">'
-  element.innerHTML+=inputbar;
+  element.innerHTML=inputbar;
 }
 function alterTask(obj)
 { 
-var parent=document.getElementById(obj.id).parentElement;
-//parent.innerHTML="";
-parent.innerHTML=document.getElementById(obj.id).value;
+var parent=obj.parentElement;
+var val=obj.value;
+var index=parent.previousSibling.innerHTML;
+arr.splice(index-1,1);
+arr.splice(index-1,0,{"title":val})
+
+parent.innerHTML=obj.value;
 
 
 }
