@@ -1,0 +1,132 @@
+html,body
+{
+ height:101%;
+}
+html {
+    overflow-y: scroll;
+}
+body{
+       
+    padding:0px;
+    border: 0px;
+    margin: 0px;
+}
+.operations{
+    display: flex;
+    height: 100%;
+}
+.button{
+    
+    margin-left: 2px;
+    margin-right: 2px;
+}
+header {
+    width:100%;
+    text-align: center;
+    top:0;
+    background:#333;
+    color: #fff;
+    margin-top: 0px;
+    font-size:40px;
+    height: 50px;
+}   
+div .container{
+    margin-top:0px;
+    display:flex;
+    flex-direction: row;
+    display: inline-block;
+    
+}
+.main{
+    width: 75%;
+    float: left;
+
+}
+.content{
+    display: none;
+    padding: 20px;
+    background: #fff;
+    font-size: 15px;
+}
+#menu{
+    width: 20%;
+    background: #000;
+    height: 80%;
+
+    
+    float: left;
+    line-height: 50px;
+
+}
+ol {color: brown;
+    line-height: 100px;
+
+} 
+table{
+    width:90%;
+    margin-top: 4px;
+    border-spacing: 0px;
+   
+}
+   
+table,th,td{
+    
+    border-collapse: collapse;
+    border : 1px solid black;
+    border-spacing: 0px;
+   
+}
+th,td{
+    padding: 10px;
+}
+table>tbody:last-child>tr>td{
+    border-bottom: 0px;
+    
+}
+
+
+
+
+#search {
+    padding: 5px 20px;
+    position: relative;
+    
+} 
+#autocomplete-suggestions{
+    position:absolute;
+    border: 1px solid black;
+    width:18%;
+   
+   
+    background-color: white;
+    
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 30px 40px;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+}
+#search-options{
+
+    padding: 1px 0px 0px 0px;
+    position: relative;
+}
+#searchButton,#addButton{
+    width:fit-content;
+}
+nav a:hover { 
+background-color: burlywood;
+}
+
+.searchpopup li:hover {
+background-color:rosybrown;
+}
+
+.searchpopup ul{
+    padding-inline-start: 0px;
+    margin: 0px;
+}
