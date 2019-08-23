@@ -12,23 +12,29 @@ function getContent(obj) {
 }
 
 function showSuggestions(obj) {
-    var searchString=obj.value;
-    for(let i=0;i<arr.length;i++)
-    {if((arr[i].title).includes(searchString))
-        populateSuggestionList(arr[i].title);
+    var searchString=obj.toUpperCase();
+    document.getElementById("autocomplete-suggestions-list").innerHTML='';
+    for (let i = 0; i < arr.length; i++) {
+        
+        if ((arr[i].title).toUpperCase().indexOf(searchString) > -1) {
+            populateSuggestionsList(arr[i].title);
+        }
     }
-    document.getElementById("autocomplete-suggestions").style.display = "block";
+    
 
 }
- function populateSuggestionsList(str)
+
+function populateSuggestionsList(str)
  {   var val='<li onmouseover="setVal(this)">'+str+'</li>';
     document.getElementById("autocomplete-suggestions-list").innerHTML+=val;
+    document.getElementById("autocomplete-suggestions").style.display = 'block';
+
  }
 
 
-function addTask(obj) {
+function addTask() {
 
-    var tab = document.getElementById(obj);
+    var tab = document.getElementById("task-list");
     var val = document.getElementById("searchbar-text").value;
     if (val.length == 0) {
         alert("Enter the task to be added");

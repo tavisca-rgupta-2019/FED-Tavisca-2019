@@ -94,6 +94,10 @@ table>tbody:last-child>tr>td{
 } 
 #autocomplete-suggestions{
     position:absolute;
+    display: none;
+}
+.searchpopup{
+    
     border: 1px solid black;
     width:18%;
    
@@ -129,4 +133,5 @@ background-color:rosybrown;
 .searchpopup ul{
     padding-inline-start: 0px;
     margin: 0px;
+    position: absolute;
 }

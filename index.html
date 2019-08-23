@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-        <script src="myScript.js"></script>
     <header>My To-Do List</header>
     <div class="container">
         <div id="menu">
@@ -21,10 +20,10 @@
            
             <div class="content" id="selected-to-do" style="display: none" >
                     <div id="search-options">
-                            <input type="text" placeholder="Add Task to search.." onchange="showSuggestions(this)" id="searchbar-text" onblur="hideSuggestions()" value="">
+                            <input type="text" placeholder="Add Task to search.." onkeyup="showSuggestions(this.value)" onkeydown="showSuggestions(this.value)" onkeypress="showSuggestions(this.value)" id="searchbar-text" onblur="hideSuggestions()">
                             <button  type="search" id="searchButton">search</button>
                             <button  type="button" id="addButton" onclick="addTask()">Add</button>
-                            <div class="searchpopup" id="autocomplete-suggestions" style="display:none">
+                            <div class="searchpopup" id="autocomplete-suggestions" style="width: 100%">
                                     <ul class="searchpopup" id="autocomplete-suggestions-list" style="list-style-type:none;background: white;">
                                     </ul>
                             </div>
@@ -46,7 +45,7 @@
     
     </div>
 
-    
-    <script src="json.js"></script>
+    <script src="myScript.js"></script>
+    <script src="renderingScript.js"></script>
 </body>
 </html>
