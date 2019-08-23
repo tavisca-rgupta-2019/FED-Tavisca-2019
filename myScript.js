@@ -78,6 +78,7 @@ function deleteVal(obj){
 function editVal(obj)
 { var parent=obj.parentElement;
   var element=parent.previousSibling;
+  console.log(element.innerHTML);
   element.innerHTML="";
   var inputbar='<input type="text" placeholder="Enter the task..." id="edit-task-bar" value="" onchange="alterTask(this)">'
 
